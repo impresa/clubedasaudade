@@ -42,13 +42,15 @@ def home_page():
 
 @app.route('/topic/<topic>')
 def topic_page(topic):
-    community_comments = communitiesFacade.search(topic)
-    return render_template('topic.html', topic=topic, community_comments=community_comments)
+    community_comments = communitiesFacade.search_comments(topic)
+    community_pages = communitiesFacade.search_pages(topic)
+    return render_template('topic.html', topic=topic, community_comments=community_comments,
+                           community_pages=community_pages)
 
 
 @app.route('/search')
 def search():
-    return json.dumps(communitiesFacade.search(request.args.get('search_terms')))
+    return json.dumps(communitiesFacade.search_comments(request.args.get('search_terms')))
 
 
 if __name__ == '__main__':

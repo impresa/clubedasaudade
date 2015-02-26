@@ -12,7 +12,7 @@ class TwitterProvider:
             'zA3YWLSxJr0BgvGnh5Ca9QXKhiumSUyTi5pYvxUJ7nNvh'
         )
 
-    def search(self, search_terms):
+    def search_tweets(self, search_terms):
         result = []
         params = {
             "lang": "pt",
