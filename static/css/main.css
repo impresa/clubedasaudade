@@ -1,3 +1,23 @@
-.news-container { background: #469cb9 }
-.books-container { background: #b99e46 }
-.music-container { background: #b68186 }
+.news-container { background: #335169 }
+.books-container { background: #a22825 }
+.music-container { background: #d69610 }
+
+.news-logo { background: url("../img/noticias.png") }
+.books-logo { background: url("../img/livros.png") }
+.music-logo { background: url("../img/musica.png") }
+
+.logo {
+    height: 90px;
+    width: 90px;
+    background-position: center;
+    background-size: 90px 90px;
+}
+
+.category-row {
+    min-height: 150px;
+    padding: 30px;
+}
+
+.body-container {
+    margin-top : 50px;
+}
