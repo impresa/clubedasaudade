@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="keywordSearchApp">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,18 +18,22 @@
 
 <body>
 
-<div class="container">
+<div class="container" ng-controller="SearchCtrl">
     <div class="row">
         <div class="col-md-12">
-            <h1 class="text-center">Tuga Tweet - Ultra Cool Mega Project</h1>
-            <form id="search" class="text-center">
-                <div class="form-group" ng-controller="TugaTweetCtrl">
-                    <input type="text" class="form-control" id="search_terms" placeholder="Introduza os criterios de pesquisa">
+            <h1 class="text-center">Ultra Cool Mega Project</h1>
+            <form novalidate class="text-center" ng-submit="search(search_terms)">
+                <div class="form-group">
+                    <input type="text" class="form-control" ng-model="search_terms" name="search_terms" placeholder="Introduza os criterios de pesquisa">
                 </div>
-                <button type="submit" class="btn btn-default">Pesquisar</button>
+                <input type="submit" class="btn btn-default" value="Pesquisar"/>
             </form>
         </div>
     </div>
+    <div class="row" ng-repeat="entry in entries">
+        <span>[[entry.text]]</span>
+    </div>
+
 </div>
 <!-- /.container -->
 
@@ -37,9 +41,9 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 <script src="{{ url_for('static', filename='controllers.js') }}"></script>
 </body>
 </html>
