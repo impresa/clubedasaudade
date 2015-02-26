@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="keywordSearchApp">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +9,7 @@
     <title>Starter Template for Bootstrap</title>
     <!-- Bootstrap core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -18,20 +19,89 @@
 
 <body>
 
-<div class="container" ng-controller="SearchCtrl">
+<div class="container">
+    <!--<div class="row">-->
+        <!--<div class="col-md-12">-->
+            <!--<h1 class="text-center">Ultra Cool Mega Project</h1>-->
+            <!--<form novalidate class="text-center" ng-submit="search(search_terms)">-->
+                <!--<div class="form-group">-->
+                    <!--<input type="text" class="form-control" ng-model="search_terms" name="search_terms" placeholder="Introduza os criterios de pesquisa">-->
+                <!--</div>-->
+                <!--<input type="submit" class="btn btn-default" value="Pesquisar"/>-->
+            <!--</form>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="row" ng-repeat="entry in entries">-->
+        <!--<span>[[entry.text]]</span>-->
+    <!--</div>-->
+
     <div class="row">
-        <div class="col-md-12">
-            <h1 class="text-center">Ultra Cool Mega Project</h1>
-            <form novalidate class="text-center" ng-submit="search(search_terms)">
-                <div class="form-group">
-                    <input type="text" class="form-control" ng-model="search_terms" name="search_terms" placeholder="Introduza os criterios de pesquisa">
-                </div>
-                <input type="submit" class="btn btn-default" value="Pesquisar"/>
-            </form>
-        </div>
+        <h1>Mega Site</h1>
     </div>
-    <div class="row" ng-repeat="entry in entries">
-        <span>[[entry.text]]</span>
+
+    <div class="row">
+        <h2>Topicos da Semana</h2>
+    </div>
+
+    {% for category in topics %}
+        <div class="row {{ category }}-container">
+            <div class="col-md-4"><h3>{{ category }}</h3></div>
+            {% for topic in topics[category]['trending'] %}
+                <div class="col-md-2">
+                    <div class="col-md-6">
+                        <img src="http://dummyimage.com/70x70/000/fff" alt="..." class="img-circle">
+                    </div>
+                    <div class="col-md-6">
+                        <h4><a href="/topic/{{topic}}">{{topic}}</a></h4>
+                    </div>
+                </div>
+            {% endfor %}
+            {% for topic in topics[category]['editorial'] %}
+                <div class="col-md-2">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="http://dummyimage.com/70x70/000/fff" alt="..." class="img-circle">
+                        </div>
+                        <div class="col-md-6">
+                            <h4><a href="/topic/{{topic}}">{{topic}}</a></h4>
+                        </div>
+                    </div>
+
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+
+    <div class="row">
+        <h2>Arquivo</h2>
+    </div>
+
+    <div class="row">
+        <form novalidate class="text-center">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Introduza os criterios de pesquisa">
+                <input type="submit" class="btn btn-default" value="Pesquisar"/>
+            </div>
+        </form>
+    </div>
+
+    <div class="row news-container">
+        <div class="col-md-3"><h3>BES</h3></div>
+        <div class="col-md-3"><h3>Troika</h3></div>
+        <div class="col-md-3"><h3>Socrates</h3></div>
+        <div class="col-md-3"><h3>Secretas</h3></div>
+    </div>
+    <div class="row books-container">
+        <div class="col-md-3"><h3>50 Sombras de Grey</h3></div>
+        <div class="col-md-3"><h3>1984</h3></div>
+        <div class="col-md-3"><h3>O Triunfo dos Porcos</h3></div>
+        <div class="col-md-3"><h3>Livros e cenas</h3></div>
+    </div>
+    <div class="row music-container">
+        <div class="col-md-3"><h3>Joao Pedro Pais</h3></div>
+        <div class="col-md-3"><h3>Xutos e Pontapes</h3></div>
+        <div class="col-md-3"><h3>Rui Veloso</h3></div>
+        <div class="col-md-3"><h3>Quim Barreiros</h3></div>
     </div>
 
 </div>

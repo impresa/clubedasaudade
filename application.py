@@ -1,13 +1,13 @@
 from flask import Flask, render_template, request
-import requests
 import json
 import os
-from requests_oauthlib import OAuth1
 from communities.CommunitiesFacade import CommunitiesFacade
+from topics.TopicsFacade import TopicsFacade
 
 app = Flask(__name__)
 app.debug = True
 communitiesFacade = CommunitiesFacade()
+topicsFacade = TopicsFacade()
 
 
 @app.url_defaults
@@ -31,8 +31,19 @@ def static_file_hash(filename):
 
 
 @app.route('/')
-def index_page():
-    return render_template('index.html')
+def home_page():
+    topics = {
+        "music": topicsFacade.get_topics("music"),
+        "books": topicsFacade.get_topics("books"),
+        "news": topicsFacade.get_topics("news")
+    }
+    return render_template('index.html', topics=topics)
+
+
+@app.route('/topic/<topic>')
+def topic_page(topic):
+    community_comments = communitiesFacade.search(topic)
+    return render_template('topic.html', topic=topic, community_comments=community_comments)
 
 
 @app.route('/search')
