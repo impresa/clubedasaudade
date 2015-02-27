@@ -30,12 +30,12 @@ def static_file_hash(filename):
 
 @app.route('/')
 def home_page():
+    lang = request.args.get('lang')
     topics = {
-        "music": topicsFacade.get_topics("music"),
         "books": topicsFacade.get_topics("books"),
+        "music": topicsFacade.get_topics("music"),
         "news": topicsFacade.get_topics("news")
     }
-    lang = request.args.get('lang')
     return render_template('index.html', topics=topics, lang=lang)
 
 

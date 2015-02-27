@@ -7,10 +7,10 @@
 .music-logo { background: url("../img/musica.png") }
 
 .logo {
-    height: 90px;
-    width: 90px;
+    height: 150px;
+    width: 150px;
     background-position: center;
-    background-size: 90px 90px;
+    background-size: 150px 150px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -43,7 +43,7 @@ a, a:hover {
     color: #FFFFFF;
 }
 
-.topic-title {
+.topic-page {
     color: #ffffff;
 }
 
@@ -113,4 +113,8 @@ a, a:hover {
     padding: 30px;
     font-size: 50px;
 
+}
+
+.thumb {
+    max-width: 150px;
 }

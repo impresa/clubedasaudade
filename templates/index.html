@@ -24,14 +24,14 @@
             <div class="col-xs-12 col-md-4 text-center"><div class="{{ category }}-logo logo"></div></div>
             {% for topic in topics[category]['trending'] %}
                 <div class="col-xs-6 col-md-2 text-center">
-                    <img src="http://dummyimage.com/70x70/000/fff" alt="..." class="img-circle">
-                    <h4><a href="/discussion/{{ category }}/{{topic}}">{{topic}}</a></h4>
+                    <img src="{{ url_for('static', filename=topic.img) }}" alt="..." class="thumb">
+                    <h4><a href="/discussion/{{ category }}/{{topic.title}}">{{topic.title}}</a></h4>
                 </div>
             {% endfor %}
             {% for topic in topics[category]['editorial'] %}
                 <div class="col-xs-6 col-md-2  text-center">
-                    <img src="http://dummyimage.com/70x70/000/fff" alt="..." class="img-circle">
-                    <h4><a href="/discussion/{{ category }}/{{topic}}">{{topic}}</a></h4>
+                    <img src="{{ url_for('static', filename=topic.img) }}" alt="..." class="thumb">
+                    <h4><a href="/discussion/{{ category }}/{{topic.title}}">{{topic.title}}</a></h4>
                 </div>
             {% endfor %}
         </div>

@@ -1,5 +1,4 @@
 from TwitterProvider import TwitterProvider
-from FacebookProvider import FacebookProvider
 
 
 class CommunitiesFacade:
