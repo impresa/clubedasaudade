@@ -12,3 +12,6 @@ class CommunitiesFacade:
 
     def search_pages(self, search_terms):
         return self.facebookProvider.search_pages(search_terms)
+
+    def search_trends(self):
+        return self.twitterProvider.search_trends()

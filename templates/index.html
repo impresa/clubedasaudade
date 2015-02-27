@@ -19,37 +19,28 @@
     {% include 'navbar.html' %}
 
     {% for category in topics %}
-        <div class="row {{ category }}-container category-row">
-            <div class="col-md-4"><div class="{{ category }}-logo logo"></div></div>
+        <div class="row {{ category }}-container category-row" id="{{ category }}">
+            <div class="col-xs-12 col-md-4 text-center"><div class="{{ category }}-logo logo"></div></div>
             {% for topic in topics[category]['trending'] %}
-                <div class="col-md-2">
-                    <div class="col-md-6">
-                        <img src="http://dummyimage.com/70x70/000/fff" alt="..." class="img-circle">
-                    </div>
-                    <div class="col-md-6">
-                        <h4><a href="/topic/{{topic}}">{{topic}}</a></h4>
-                    </div>
+                <div class="col-xs-6 col-md-2 text-center">
+                    <img src="http://dummyimage.com/70x70/000/fff" alt="..." class="img-circle">
+                    <h4><a href="/discussion/{{ category }}/{{topic}}">{{topic}}</a></h4>
                 </div>
             {% endfor %}
             {% for topic in topics[category]['editorial'] %}
-                <div class="col-md-2">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <img src="http://dummyimage.com/70x70/000/fff" alt="..." class="img-circle">
-                        </div>
-                        <div class="col-md-6">
-                            <h4><a href="/topic/{{topic}}">{{topic}}</a></h4>
-                        </div>
-                    </div>
-
+                <div class="col-xs-6 col-md-2  text-center">
+                    <img src="http://dummyimage.com/70x70/000/fff" alt="..." class="img-circle">
+                    <h4><a href="/discussion/{{ category }}/{{topic}}">{{topic}}</a></h4>
                 </div>
             {% endfor %}
         </div>
     {% endfor %}
 
     <div class="row">
-        <h2 id="sobre">Sobre Nos</h2>
-        <p class="lead">Imaginando que a internet é uma gigantesca e infinita linha de caminhos de ferro, que une todas as cidades do mundo à distância de um clique, o projeto pretende fazer circular a língua portuguesa, através de produtos culturais (livros e discos) e noticiosos. Se em cidades separadas por milhares de quilómetros o mesmo livro estiver a ser lido, o mesmo disco estiver a ser ouvido e num qualquer café estiverem a ser debatidas as mesmas notícias, isso é saudade, intersaudade... da cultura e dos costumes, do povo e da língua.</p>
+        <div class="col-md-12 text-center">
+            <h2 id="sobre">Sobre Nos</h2>
+            <p class="lead">Imaginando que a internet é uma gigantesca e infinita linha de caminhos de ferro, que une todas as cidades do mundo à distância de um clique, o projeto pretende fazer circular a língua portuguesa, através de produtos culturais (livros e discos) e noticiosos. Se em cidades separadas por milhares de quilómetros o mesmo livro estiver a ser lido, o mesmo disco estiver a ser ouvido e num qualquer café estiverem a ser debatidas as mesmas notícias, isso é saudade, intersaudade... da cultura e dos costumes, do povo e da língua.</p>
+        </div>
     </div>
 
 </div>

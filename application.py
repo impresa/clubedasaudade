@@ -40,11 +40,11 @@ def home_page():
     return render_template('index.html', topics=topics)
 
 
-@app.route('/topic/<topic>')
-def topic_page(topic):
+@app.route('/discussion/<category>/<topic>')
+def topic_page(category,topic):
     community_comments = communitiesFacade.search_comments(topic)
     community_pages = []#communitiesFacade.search_pages(topic)
-    return render_template('topic.html', topic=topic, community_comments=community_comments,
+    return render_template('topic.html', topic=topic, category=category, community_comments=community_comments,
                            community_pages=community_pages)
 
 

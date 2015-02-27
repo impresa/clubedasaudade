@@ -1,6 +1,10 @@
+from communities.TwitterProvider import TwitterProvider
+
+
 class TopicsProvider:
 
     def __init__(self):
+        self.twitterProvider = TwitterProvider()
         self.editorialTopics = {
             "news": ["BES", "Socrates"],
             "music": ["Rui Veloso", "Xutos e Pontapes"],

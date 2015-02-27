@@ -18,26 +18,38 @@
 
     {% include 'navbar.html' %}
 
-    <h1>{{ topic }}</h1>
+    <div class="row text-center {{category}}-container">
+        <h1 class="topic-title">{{ topic }}</h1>
+    </div>
 
-    <div class="row">
-        <div class="col-md-6">
+    <div class="row text-center">
+        <div class="col-md-4">
             <h2>Google Hangouts</h2>
             <iframe width="420" height="315" src="http://www.youtube.com/embed/Sc8k1QgDpZU" frameborder="0" allowfullscreen></iframe>
         </div>
-        <div class="col-md-6">
-            <h2>Tweets</h2>
+        <div class="col-md-4">
+            <h2>O que se diz no Twitter</h2>
             {% for comment in community_comments %}
                 <div class="row">
+                    <img src="{{comment.picture}}" />
                     <span>{{ comment.text }}</span>
                 </div>
             {% endfor %}
         </div>
+        <div class="col-md-4">
+            <h2>O que se diz no Facebook</h2>
+            {% for comment in community_comments %}
+            <div class="row">
+                <img src="{{comment.picture}}" />
+                <span>{{ comment.text }}</span>
+            </div>
+            {% endfor %}
+        </div>
     </div>
 
-    <div class="row">
+    <div class="row text-center">
         <div class="col-md-12">
-            <h2>Em Noticias</h2>
+            <h2>O que se diz nas noticias</h2>
         </div>
         <div class="row">
             <div class="col-md-12">
