@@ -6,71 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Starter Template for Bootstrap</title>
-    <!-- Bootstrap core CSS -->
-    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="{{ url_for('static', filename='js/html5shiv.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/respond.min.js') }}"></script>
-    <![endif]-->
+    <title>Saudade</title>
+
+    {% include 'head.html' %}
+
 </head>
 
 <body>
 
 <div class="container-fluid body-container">
 
-    <!-- Fixed navbar -->
-    <!--<nav class="navbar navbar-default navbar-fixed-top">-->
-        <!--<div class="container">-->
-            <!--<div class="navbar-header">-->
-                <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">-->
-                    <!--<span class="sr-only">Toggle navigation</span>-->
-                    <!--<span class="icon-bar"></span>-->
-                    <!--<span class="icon-bar"></span>-->
-                    <!--<span class="icon-bar"></span>-->
-                <!--</button>-->
-                <!--<a class="navbar-brand" href="#">Saudade</a>-->
-            <!--</div>-->
-            <!--<div id="navbar" class="navbar-collapse collapse">-->
-                <!--<ul class="nav navbar-nav">-->
-                    <!--<li class="active"><a href="#">Home</a></li>-->
-                    <!--<li><a href="#sobre">Sobre</a></li>-->
-                <!--</ul>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</nav>-->
-
-    <!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Saudade</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <form class="navbar-form navbar-nav navbar-right" role="search">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="">
-                    </div>
-                    <button type="submit" class="btn btn-default">Pesquisar</button>
-                </form>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#news">Noticias</a></li>
-                    <li><a href="#books">Livros</a></li>
-                    <li><a href="#music">Musica</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                </ul>
-            </div><!--/.nav-collapse -->
-        </div>
-    </nav>
+    {% include 'navbar.html' %}
 
     {% for category in topics %}
         <div class="row {{ category }}-container category-row">

@@ -21,3 +21,15 @@
 .body-container {
     margin-top : 50px;
 }
+
+.topbar {
+    background: #d7d0cd;
+    font-family: 'Lobster', serif;
+    font-size:20px;
+}
+
+.site-name {
+    font-size: 45px;
+    color: #3c3c3b !important;
+
+}
