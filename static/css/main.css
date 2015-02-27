@@ -116,5 +116,15 @@ a, a:hover {
 }
 
 .thumb {
-    max-width: 150px;
+    max-width: 200px;
 }
+
+.in-the-news {
+    padding: 30px;
+    margin-top: 30px;
+}
+
+.news-thumb {
+    margin-top: 20px;
+}
+

@@ -23,47 +23,59 @@
         <h1 class="topic-title">{{ topic }}</h1>
     </div>
 
-    <div class="row text-center">
-        <div class="col-md-4">
+    <div class="row">
+        <div class="col-md-4 text-center">
             <h2>Google Hangouts</h2>
             <iframe width="420" height="315" src="http://www.youtube.com/embed/Sc8k1QgDpZU" frameborder="0" allowfullscreen></iframe>
         </div>
         <div class="col-md-4">
-            <h2>O que se diz no Twitter</h2>
+            <h2 class="text-center">O que se diz no Twitter</h2>
             {% for comment in community_comments %}
                 <div class="row">
-                    <img src="{{comment.picture}}" />
-                    <span>{{ comment.text }}</span>
+                    <div class="col-md-2">
+                        <img src="{{comment.picture}}" />
+                    </div>
+                    <div class="col-md-10">
+                        <span>{{ comment.text }}</span>
+                    </div>
                 </div>
             {% endfor %}
         </div>
         <div class="col-md-4">
-            <h2>O que se diz no Facebook</h2>
+            <h2 class="text-center">O que se diz no Facebook</h2>
             {% for comment in community_comments %}
             <div class="row">
-                <img src="{{comment.picture}}" />
-                <span>{{ comment.text }}</span>
+                <div class="col-md-2">
+                    <img src="{{comment.picture}}" />
+                </div>
+                <div class="col-md-10">
+                    <span>{{ comment.text }}</span>
+                </div>
             </div>
             {% endfor %}
         </div>
     </div>
 
-    <div class="row text-center">
-        <div class="col-md-12">
+    <div class="row in-the-news">
+        <div class="col-md-12 text-center">
             <h2>O que se diz nas noticias</h2>
         </div>
         <div class="row">
-            <div class="col-md-12">
-                <p class="">Bla Bla</p>
+            <div class="col-md-2 col-md-offset-1">
+                <img src="http://expresso.sapo.pt/imv/2/265/660/gettyimages166035909-e25d.jpg" class="thumb news-thumb img-rounded"/>
             </div>
-            <div class="col-md-12">
-                <p class="">Bla Bla</p>
+            <div class="col-md-8">
+                <h3><a href="http://expresso.sapo.pt/aumenta-o-risco-de-um-incumprimento-na-grecia-em-marco=f912757#ixzz3SxOWMgJ3">Aumenta o risco de um incumprimento na Grécia em março</a></h3>
+                <p class="lead">Bolsa de Atenas está a cair pelo terceiro dia consecutivo. Juros da dívida grega continuam a subir, apesar do acordo ter passado esta manhã em Berlim. FMI e grupo de trabalho do Eurogrupo preocupados com pagamentos de dívida em março.</p>
             </div>
-            <div class="col-md-12">
-                <p class="">Bla Bla</p>
+        </div>
+        <div class="row">
+            <div class="col-md-2 col-md-offset-1">
+                <img src="http://expresso.sapo.pt/imv/2/265/700/pol-18908381-ce25.jpg" class="thumb news-thumb img-rounded"/>
             </div>
-            <div class="col-md-12">
-                <p class="">Bla Bla</p>
+            <div class="col-md-8">
+                <h3><a href="http://expresso.sapo.pt/confrontos-marcaram-a-primeira-manifestacao-anti-governo-em-atenas=f912662#ixzz3SxT6Oj6Z">Confrontos marcaram a primeira manifestação anti-Governo em Atenas</a></h3>
+                <p class="lead">Centenas de pessoas saíram à rua da capital grega para se manifestarem contra o acordo em vias de ser aprovado pela Europa. A marcha terminou com agressões e vários desacatos.</p>
             </div>
         </div>
     </div>
