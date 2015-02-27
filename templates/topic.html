@@ -6,19 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Saudade - {{ topic }}</title>
+    <title>Clube da Saudade - {{ topic }}</title>
 
     {% include 'head.html' %}
 
 </head>
 
-<body>
+<body class="{{category}}-container">
+{% include 'fork.html' %}
 
 <div class="container-fluid body-container">
 
     {% include 'navbar.html' %}
 
-    <div class="row text-center {{category}}-container">
+    <div class="row text-center">
         <h1 class="topic-title">{{ topic }}</h1>
     </div>
 

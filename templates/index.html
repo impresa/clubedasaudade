@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Saudade</title>
+    <title>Clube da Saudade</title>
 
     {% include 'head.html' %}
 
 </head>
 
 <body>
+{% include 'fork.html' %}
 
 <div class="container-fluid body-container">
 
@@ -38,8 +39,14 @@
 
     <div class="row">
         <div class="col-md-12 text-center">
-            <h2 id="sobre">Sobre Nos</h2>
-            <p class="lead">Imaginando que a internet é uma gigantesca e infinita linha de caminhos de ferro, que une todas as cidades do mundo à distância de um clique, o projeto pretende fazer circular a língua portuguesa, através de produtos culturais (livros e discos) e noticiosos. Se em cidades separadas por milhares de quilómetros o mesmo livro estiver a ser lido, o mesmo disco estiver a ser ouvido e num qualquer café estiverem a ser debatidas as mesmas notícias, isso é saudade, intersaudade... da cultura e dos costumes, do povo e da língua.</p>
+            <h2 id="about" class="about">{% if lang == 'en' %}About{% else %}Sobre{% endif %}</h2>
+            <p class="lead">
+                {% if lang == 'en' %}
+                Imagine the world as it is today, with internet connections from one city to another, in many different countries, creating a network in which you can stand “side by side” with someone who is thousand kilometres away from you. Imagine the books you like, the authors you read and the music that makes you dream. Imagine the cultural habits that you have embraced and grown up with, that makes you what you are and how you see the world.<br /><br />Now… imagine that all of that disappears one day, and that you live in a different country, far away from your own, where people have different habits, different ways of thinking and doing things. How will you live? What will you think? Will you miss the days where you can be with your friends and family? Do you feel the heartache growing on your chest? Of course you do! That is Saudade.
+                {% else %}
+                Imaginando que a internet é uma gigantesca e infinita linha de caminhos de ferro, que une todas as cidades do mundo à distância de um clique, o projeto pretende fazer circular a língua portuguesa, através de produtos culturais (livros e discos) e noticiosos. Se em cidades separadas por milhares de quilómetros o mesmo livro estiver a ser lido, o mesmo disco estiver a ser ouvido e num qualquer café estiverem a ser debatidas as mesmas notícias, isso é saudade... da cultura e dos costumes, do povo e da língua.
+                {% endif %}
+            </p>
         </div>
     </div>
 

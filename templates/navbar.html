@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand site-name" href="/">Saudade</a>
+            <a class="navbar-brand site-name" href="/">Clube da Saudade</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <form class="navbar-form navbar-nav navbar-right" role="search">
@@ -18,10 +18,14 @@
                 <button type="submit" class="btn btn-default">Pesquisar</button>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#news">Noticias</a></li>
-                <li><a href="#books">Livros</a></li>
-                <li><a href="#music">Musica</a></li>
-                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#news">{% if lang == 'en' %}News{% else %}Noticias{% endif %}</a></li>
+                <li><a href="#books">{% if lang == 'en' %}Books{% else %}Livros{% endif %}</a></li>
+                <li><a href="#music">{% if lang == 'en' %}Music{% else %}Musica{% endif %}</a></li>
+                <li><a href="#about">{% if lang == 'en' %}About{% else %}Sobre{% endif %}</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/?lang=en"><img src="{{ url_for('static', filename='img/flag_icon_uk.gif') }}" /></a></li>
+                <li><a href="/"><img src="{{ url_for('static', filename='img/flag_icon_pt.gif') }}" /></a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>

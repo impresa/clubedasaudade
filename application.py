@@ -9,7 +9,6 @@ app.debug = True
 communitiesFacade = CommunitiesFacade()
 topicsFacade = TopicsFacade()
 
-
 @app.url_defaults
 def hashed_url_for_static_file(endpoint, values):
     if 'static' == endpoint or '.static' == endpoint[-7:]:
@@ -29,7 +28,6 @@ def hashed_url_for_static_file(endpoint, values):
 def static_file_hash(filename):
     return int(os.stat(filename).st_mtime)
 
-
 @app.route('/')
 def home_page():
     topics = {
@@ -37,15 +35,17 @@ def home_page():
         "books": topicsFacade.get_topics("books"),
         "news": topicsFacade.get_topics("news")
     }
-    return render_template('index.html', topics=topics)
+    lang = request.args.get('lang')
+    return render_template('index.html', topics=topics, lang=lang)
 
 
 @app.route('/discussion/<category>/<topic>')
 def topic_page(category,topic):
     community_comments = communitiesFacade.search_comments(topic)
-    community_pages = []#communitiesFacade.search_pages(topic)
+    community_pages = []
+    lang = request.args.get('lang')
     return render_template('topic.html', topic=topic, category=category, community_comments=community_comments,
-                           community_pages=community_pages)
+                           community_pages=community_pages, lang=lang)
 
 
 @app.route('/search')
